@@ -1,14 +1,8 @@
 import c4d
 import math
 from c4d import gui
-# Welcome to the world of Python
-
-
-# Script state in the menu or the command palette
-# Return True or c4d.CMD_ENABLED to enable, False or 0 to disable
-# Alternatively return c4d.CMD_ENABLED|c4d.CMD_VALUE to enable and check/mark
-#def state():
-#    return True
+# Script to iterate through a tree of objects, and print out their Transform components
+# Used to generate the list of Transforms for Decentraland objects, created by a Cloner in Cinema 4D
 
 # Main function
 def main():
@@ -32,7 +26,7 @@ def main():
         print('{}{},'.format(name, count))
         obj = obj.GetNext()
         count +=1
-    
+
 # Execute main()
 if __name__=='__main__':
     main()
