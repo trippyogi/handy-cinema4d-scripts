@@ -1,13 +1,8 @@
 import c4d
 from c4d import gui
-# Welcome to the world of Python
+# Script to add a list of new poses to an object with a Pose Morph Tag
+# Especially useful when creating facial pose morphs for ARKit
 
-
-# Script state in the menu or the command palette
-# Return True or c4d.CMD_ENABLED to enable, False or 0 to disable
-# Alternatively return c4d.CMD_ENABLED|c4d.CMD_VALUE to enable and check/mark
-#def state():
-#    return True
 
 BLEND_SHAPE_LOCATION_LIST = ["eyeBlinkLeft", "eyeLookDownLeft", "eyeLookInLeft", "eyeLookOutLeft", "eyeLookUpLeft", "eyeSquintLeft", "eyeWideLeft", "eyeBlinkRight", "eyeLookDownRight", "eyeLookInRight", "eyeLookOutRight", "eyeLookUpRight", "eyeSquintRight", "eyeWideRight", "jawForward", "jawLeft", "jawRight", "jawOpen", "mouthClose", "mouthFunnel", "mouthPucker", "mouthLeft", "mouthRight", "mouthSmileLeft", "mouthSmileRight", "mouthFrownLeft", "mouthFrownRight", "mouthDimpleLeft", "mouthDimpleRight", "mouthStretchLeft", "mouthStretchRight", "mouthRollLower", "mouthRollUpper", "mouthShrugLower", "mouthShrugUpper", "mouthPressLeft", "mouthPressRight", "mouthLowerDownLeft", "mouthLowerDownRight", "mouthUpperUpLeft", "mouthUpperUpRight", "browDownLeft", "browDownRight", "browInnerUp", "browOuterUpLeft", "browOuterUpRight", "cheekPuff", "cheekSquintLeft", "cheekSquintRight", "noseSneerLeft", "noseSneerRight", "tongueOut"]
 
