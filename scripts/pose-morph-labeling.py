@@ -10,27 +10,24 @@ BLEND_SHAPE_LOCATION_LIST = ["eyeBlinkLeft", "eyeLookDownLeft", "eyeLookInLeft",
 def main():
     targetObject = doc.GetActiveObject()
 
-    corr = targetObject.GetDownLast() 
+    corr = targetObject.GetDownLast()
     if not targetObject : print('error')
-    
+
     morphTag = targetObject.GetTag(c4d.Tposemorph)
-    
+
+
     for shape in BLEND_SHAPE_LOCATION_LIST:
         print(shape)
+
         morph = morphTag.AddMorph()
         if morph is None:
             return
-    
         morph.SetName(shape)
-    
-    # select latest morph
-    count = morphTag.GetMorphCount()
-    morphTag.SetActiveMorphIndex(count-1)
-    
-    # set "Target"
-    morphTag[c4d.ID_CA_POSE_TARGET] = targetObject
-    
-    c4d.EventAdd()
+        morph.Store(doc, morphTag, c4d.CAMORPH_DATA_FLAGS_POINTS)
+
+        # select last morph
+        count = morphTag.GetMorphCount()
+        morphTag.SetActiveMorphIndex(count - 1)
 
 # Execute main()
 if __name__=='__main__':
